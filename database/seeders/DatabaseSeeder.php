@@ -25,5 +25,12 @@ class DatabaseSeeder extends Seeder
          DB::table('kategori')->insert([
              'nama_kategori' => 'Nasional'
          ]);
+
+        DB::table('berita')->insert([
+            'judul_berita' => 'Lorem Ipsum',
+            'isi_berita' => 'Lorem Ipsum',
+            'gambar_berita' => 'lorem.jpg',
+            'id_kategori' => 1
+        ]);
     }
 }
