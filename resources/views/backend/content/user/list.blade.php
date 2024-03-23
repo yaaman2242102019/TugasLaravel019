@@ -3,11 +3,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-6">
-               <h1 class="h3 mb-2 text-gray-800">List kategori</h1>
+               <h1 class="h3 mb-2 text-gray-800">List user</h1>
             </div>
             <div class="col-lg-6 text-right">
-            <a href="{{route('kategori.tambah')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Tambah</a>
-            <a href="{{route('kategori.exportPdf')}}" class="btn btn-sm btn-primary"><i class="fa fa-file-pdf"></i> Export PDF</a>
+            <a href="{{route('user.tambah')}}" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i>Tambah</a>
             </div>
         </div>
 
@@ -24,7 +23,8 @@
                         <thead>
                         <tr>
                             <th>No</th>
-                            <th>Nama kategori</th>
+                            <th>Nama User</th>
+                            <th>Email User</th>
                             <th>Aksi</th>
                         </tr>
                         </thead>
@@ -32,13 +32,14 @@
                         @php
                         $no = 1;
                         @endphp
-                        @foreach($kategori as $row)
+                        @foreach($user as $row)
                             <tr>
                                 <td>{{$no++}}</td>
-                                <td>{{$row->nama_kategori}}</td>
+                                <td>{{$row->name}}</td>
+                                <td>{{$row->email}}</td>
                                 <td>
-                                    <a href="{{route('kategori.ubah',$row->id_kategori)}}" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i>Ubah</a>
-                                    <a href="{{route('kategori.hapus',$row->id_kategori)}}" onclick="return confirm('Anda yakin?')" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i>Hapus</a>
+                                    <a href="{{route('user.ubah',$row->id)}}" class="btn btn-sm btn-secondary"><i class="fa fa-edit"></i>Ubah</a>
+                                    <a href="{{route('user.hapus',$row->id)}}" onclick="return confirm('Anda yakin?')" class="btn btn-sm btn-secondary"><i class="fa fa-trash"></i>Hapus</a>
                                 </td>
                             </tr>
                         @endforeach
